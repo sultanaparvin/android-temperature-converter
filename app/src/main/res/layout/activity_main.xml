@@ -33,7 +33,7 @@
             android:text="Temp in Celisius:" />
 
         <EditText
-            android:id="@+id/editText9"
+            android:id="@+id/text_temp_celsius"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -44,6 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Convert" />
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
