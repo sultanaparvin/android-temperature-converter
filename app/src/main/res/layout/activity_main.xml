@@ -37,6 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:enabled="false"
             android:inputType="textPersonName" />
 
         <Button
@@ -44,6 +45,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Convert" />
+
+        <ImageView
+            android:id="@+id/weather_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@color/colorAccent" />
 
     </LinearLayout>
 

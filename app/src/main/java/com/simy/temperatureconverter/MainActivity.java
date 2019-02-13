@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
         //Celsius edit text
         final EditText celsiusEditText = findViewById(R.id.text_temp_celsius);
 
-
+        //Image Element
+        final ImageView weatherImage = findViewById(R.id.weather_image);
 
         convertButton.setOnClickListener(new View.OnClickListener(){
            public void onClick(View v){
@@ -36,9 +38,13 @@ public class MainActivity extends AppCompatActivity {
                Float fahrenheitValueFloat = Float.parseFloat(fahrenheitValue);
                Float result = (fahrenheitValueFloat - 32) * 5/9;
 
-               //String celsiusValue  = celsiusEditText.getText().toString();
-               //int celsiusValueInteger =  Integer.getInteger(celsiusValue);
-               Toast.makeText(getApplicationContext(),"Current Temp in Celsius is "+result.toString(),Toast.LENGTH_LONG).show();
+               if(result <= 0){
+                   weatherImage.setImageResource(R.drawable.snowflake);
+               }else{
+                    weatherImage.setImageResource(R.drawable.sunny);
+               }
+               //Set the result
+               celsiusEditText.setText(result.toString());
            }
         });
     }
